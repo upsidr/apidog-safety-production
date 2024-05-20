@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "apidog-safety-production",
+  "version": "1.0",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://app.apidog.com/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; connect-src ws://localhost:* https://yourdomain.com"
+  }
+}
